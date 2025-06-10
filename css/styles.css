@@ -1,0 +1,189 @@
+/* ============================= */
+/* Reset & Variables             */
+/* ============================= */
+:root {
+  --font: 'Roboto', sans-serif;
+  --primary: #0d6efd;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font);
+}
+
+/* ============================= */
+/* Barra Superior                */
+/* ============================= */
+.navbar .nav-link {
+  color: #000;
+}
+.navbar .nav-link:hover {
+  color: var(--primary);
+}
+.nav-logo {
+  max-height: 40px;
+}
+
+/* ============================= */
+/* Carrusel de Fondo             */
+/* ============================= */
+#heroCarousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+}
+#heroCarousel .carousel-item,
+#heroCarousel .carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+/* Overlay oscuro */
+#heroCarousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ============================= */
+/* Contenido Superpuesto         */
+/* ============================= */
+.content-overlay {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0; /* sin padding alrededor */
+}
+
+/* ============================= */
+/* Logo Overlay                  */
+/* ============================= */
+.logo-overlay {
+  position: absolute;
+  top: 20px; /* ajusta vertical */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.logo-overlay img {
+  max-height: 120px;
+}
+
+/* ============================= */
+/* Sección CTA                   */
+/* ============================= */
+#cta {
+  padding-top: 1.5rem;   /* sin py-5 */
+  padding-bottom: 1.5rem;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#cta h2 {
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+#cta .row {
+  margin-top: 3rem;
+}
+#cta .card {
+  background: rgba(255,255,255,0.85);
+  margin: 0 auto;
+}
+#cta .card-body {
+  padding: 2rem;
+}
+#cta .card-body i {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+#cta .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
+footer#contacto {
+  background: rgba(0,0,0,0.7) !important;
+  padding: 1.5rem 0;
+}
+
+/* ============================= */
+/* Utilidades                    */
+/* ============================= */
+a.text-decoration-none {
+  text-decoration: none !important;
+}
+
+/* ============================= */
+/* Media Queries (MÓVIL ≤576px)  */
+/* ============================= */
+@media (max-width: 576px) {
+  #heroCarousel .carousel-caption {
+    display: none !important;
+  }
+  .nav-logo {
+    max-height: 30px;
+  }
+  .content-overlay {
+    padding-top: 4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .logo-overlay {
+    top: 10px;
+  }
+  #cta h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  #cta .row {
+    margin-top: 2rem;
+  }
+  #cta .card {
+    max-width: 80%;
+    margin-bottom: 0.5rem;
+  }
+  #cta .card-body {
+    padding: 0.75rem 1rem;
+  }
+  #cta .card-body i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #cta .card-title {
+    font-size: 1rem;
+  }
+  #cta {
+    margin-bottom: 1rem;
+  }
+  #heroCarousel .carousel-control-prev,
+  #heroCarousel .carousel-control-next {
+    display: none;
+  }
+}

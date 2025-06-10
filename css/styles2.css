@@ -1,0 +1,107 @@
+/* Reset & Variables */
+:root {
+  --font: 'Roboto', sans-serif;
+  --primary: #0d6efd;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font);
+  background: #111;         /* ligero contraste con fondo oscuro */
+  color: #fff;
+}
+
+/* Navbar */
+.navbar { background: rgba(255,255,255,0.9)!important; }
+.navbar .navbar-brand { color: #333; font-weight:700; }
+.navbar .navbar-brand:hover { color: var(--primary); }
+
+/* Título */
+h1, h2.h3 {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Pestañas */
+.nav-pills .nav-link {
+  font-weight: 500;
+  color: #ddd;
+  margin: 0 .5rem;
+  border-radius: .25rem;
+}
+.nav-pills .nav-link.active {
+  color: #fff;
+  background: var(--primary);
+}
+
+/* Panorama */
+.panorama {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  background: #000;
+  margin: 0 auto;
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Miniaturas */
+.photo-thumb {
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+  border: 2px solid transparent;
+  border-radius: .5rem;
+}
+.photo-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  border-color: var(--primary);
+}
+
+/* Modal de foto */
+.modal-content {
+  background: transparent;
+}
+.modal-body img {
+  width: 100%;
+  border-radius: .5rem;
+}
+
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: .5rem;
+  overflow: hidden;
+}
+.card-body { padding: .75rem; }
+.card-title {
+  color: #fff;
+  margin-top: .5rem;
+  font-weight: 500;
+}
+
+/* Hover scale para cards */
+.hover-scale {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Footer */
+footer {
+  background: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .panorama { height: 300px; }
+}

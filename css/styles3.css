@@ -1,0 +1,207 @@
+/* ==============================
+   Reset, Variables & Global
+   ============================== */
+:root {
+  --font: 'Roboto', sans-serif;
+  --primary: #0d6efd;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------
+   Full-screen & sin scroll
+   ------------------------------ */
+html, body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  background: #111;
+  color: #fff;
+}
+
+/* ==============================
+   Navbar
+   ============================== */
+.navbar {
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.9) !important;
+  z-index: 10;
+}
+.navbar .navbar-brand {
+  color: #333;
+  font-weight: 700;
+}
+.navbar .navbar-brand:hover {
+  color: var(--primary);
+}
+
+/* ==============================
+   Main & Vídeo
+   ============================== */
+/* main ocupa todo el espacio entre header y footer */
+main {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+/* contenedor que rellena todo el main */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* video cubre todo el contenedor */
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cubre sin deformar */
+}
+
+/* ==============================
+   Títulos y Texto
+   ============================== */
+h1, h2.h3 {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ==============================
+   Nav-pills (si las usas) 
+   ============================== */
+.nav-pills .nav-link {
+  font-weight: 500;
+  color: #ddd;
+  margin: 0 .5rem;
+  border-radius: .25rem;
+}
+.nav-pills .nav-link.active {
+  color: #fff;
+  background: var(--primary);
+}
+
+/* ==============================
+   Panorama (otro componente)
+   ============================== */
+.panorama {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  background: #000;
+  margin: 0 auto;
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* ==============================
+   Miniaturas
+   ============================== */
+.photo-thumb {
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+  border: 2px solid transparent;
+  border-radius: .5rem;
+}
+.photo-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  border-color: var(--primary);
+}
+
+/* ==============================
+   Modal de foto
+   ============================== */
+.modal-content {
+  background: transparent;
+}
+.modal-body img {
+  width: 100%;
+  border-radius: .5rem;
+}
+
+/* ==============================
+   Cards
+   ============================== */
+.card {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  border-radius: .5rem;
+  overflow: hidden;
+}
+.card-body {
+  padding: .75rem;
+}
+.card-title {
+  color: #fff;
+  margin-top: .5rem;
+  font-weight: 500;
+}
+
+/* ==============================
+   Hover scale (cards y video)
+   ============================== */
+.hover-scale {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* ==============================
+   Footer
+   ============================== */
+footer {
+  flex-shrink: 0;
+  background: #000;
+  text-align: center;
+  padding: .75rem 0;
+  z-index: 10;
+}
+
+/* ==============================
+   Adaptación para móviles
+   ============================== */
+@media (max-width: 768px) {
+  /* Centrar el vídeo en el eje vertical y horizontal */
+  main {
+    display: flex;           
+    flex: 1 1 auto;          
+    align-items: center;     
+    justify-content: center; 
+  }
+
+  /* Contenedor ratio fijo 16:9 */
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;    /* 9/16 = 0.5625 */
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .video-container video {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* vídeo completo sin cortes */
+  }
+}
