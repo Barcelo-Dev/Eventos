@@ -30,7 +30,7 @@
     </div>
   </nav>
 
-  <!-- Sección de Video ocupa TODO el espacio restante -->
+  <!-- Sección de Videos ocupa TODO el espacio restante -->
   <main class="flex-grow-1 d-flex">
     <div class="video-container w-100">
       <video
@@ -58,14 +58,12 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const vid = document.getElementById('mainVideo');
-      // Arranca muted para sortear la política de autoplay
+      // Aseguramos que esté silenciado y tratamos de reproducir
+      vid.muted = true;
       vid.play().catch(err => {
         console.warn('Autoplay bloqueado:', err);
+        // Aquí podrías mostrar un botón “▶️” para iniciar si fuera necesario
       });
-      // Cuando pueda reproducir, quitamos el mute y sigue sonando
-      vid.addEventListener('canplay', () => {
-        vid.muted = false;
-      }, { once: true });
     });
   </script>
 </body>
