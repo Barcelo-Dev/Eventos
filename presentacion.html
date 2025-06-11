@@ -18,6 +18,8 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/styles3.css" />
   <link rel="icon" href="images/icono.png" type="image/png" />
+  <link rel="icon" href="images/icono.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -28,13 +30,14 @@
     </div>
   </nav>
 
-  <!-- Sección de Videos ocupa TODO el espacio restante -->
+  <!-- Sección de Video -->
   <main class="flex-grow-1 d-flex">
     <div class="video-container w-100">
       <video
         id="mainVideo"
-        autoplay
-        playsinline
+        autoplay      <!-- atributo para intentar autoplay -->
+        muted         <!-- necesario en muchos navegadores para que autoplay funcione -->
+        playsinline   <!-- evita fullscreen en iOS -->
         preload="auto"
         class="w-100 h-100"
       >
@@ -55,11 +58,16 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const vid = document.getElementById('mainVideo');
-      // Intentamos reproducir con sonido
+
+      // Forzamos el play tras load
       vid.play().catch(err => {
-        console.warn('Autoplay con sonido bloqueado:', err);
-        // Aquí podrías mostrar un botón “▶️” personalizado para iniciar
+        console.warn('Autoplay bloqueado:', err);
       });
+
+      // Si quieres el sonido activo tan pronto como permita el navegador:
+      vid.addEventListener('canplay', () => {
+        vid.muted = false;
+      }, { once: true });
     });
   </script>
 </body>
