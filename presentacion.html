@@ -30,14 +30,14 @@
     </div>
   </nav>
 
-  <!-- Sección de Video -->
+  <!-- Sección de Video ocupa TODO el espacio restante -->
   <main class="flex-grow-1 d-flex">
     <div class="video-container w-100">
       <video
         id="mainVideo"
-        autoplay      <!-- atributo para intentar autoplay -->
-        muted         <!-- necesario en muchos navegadores para que autoplay funcione -->
-        playsinline   <!-- evita fullscreen en iOS -->
+        autoplay
+        muted
+        playsinline
         preload="auto"
         class="w-100 h-100"
       >
@@ -58,13 +58,11 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const vid = document.getElementById('mainVideo');
-
-      // Forzamos el play tras load
+      // Arranca muted para sortear la política de autoplay
       vid.play().catch(err => {
         console.warn('Autoplay bloqueado:', err);
       });
-
-      // Si quieres el sonido activo tan pronto como permita el navegador:
+      // Cuando pueda reproducir, quitamos el mute y sigue sonando
       vid.addEventListener('canplay', () => {
         vid.muted = false;
       }, { once: true });
