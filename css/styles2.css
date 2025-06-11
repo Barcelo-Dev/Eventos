@@ -101,6 +101,21 @@ footer {
   background: #000;
 }
 
+.photo-thumb {
+  max-width: 300px;
+  width: 100%;
+  margin: 0.5rem auto;
+  display: block;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.photo-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.7);
+  border-color: var(--primary);
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .panorama { height: 300px; }
