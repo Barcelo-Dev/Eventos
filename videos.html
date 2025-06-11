@@ -10,84 +10,111 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <!-- Bootstrap CSS v5 -->
+  <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
-  <!-- Estilos personalizados -->
+  <!-- Tus estilos base -->
   <link rel="stylesheet" href="css/styles2.css" />
-  <link rel="icon" href="images/icono.png" type="image/png" />
-   <link rel="icon" href="images/icono.ico" type="image/x-icon">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+  <style>
+    /* Card de vídeo */
+    .video-card {
+      overflow: hidden;
+      border-radius: .5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: transform .3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+    .video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-light bg-light py-2 border-bottom">
+  <nav class="navbar navbar-light bg-light border-bottom">
     <div class="container">
       <a class="navbar-brand" href="index.html">← Volver</a>
     </div>
   </nav>
 
-  <!-- Sección de Videos -->
+  <!-- Sección Videos -->
   <main class="container py-5 flex-grow-1">
     <h1 class="text-center mb-5">Videos</h1>
     <div class="row gy-4 justify-content-center">
-      <!-- Video 1 -->
-      <div class="col-12 col-md-4">
-        <div class="ratio ratio-16x9 rounded shadow hover-scale overflow-hidden">
-          <video controls class="w-100 h-100">
-            <source src="videos/video1.mp4" type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+
+      <!-- Cada tarjeta de vídeo -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="video-card">
+          <div class="ratio ratio-16x9">
+            <video
+              preload="metadata"
+              controls
+              playsinline
+              class="w-100 h-100"
+            >
+              <source src="videos/video1.mp4" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
         </div>
       </div>
-      <!-- Video 2 -->
-      <div class="col-12 col-md-4">
-        <div class="ratio ratio-16x9 rounded shadow hover-scale overflow-hidden">
-          <video controls class="w-100 h-100">
-            <source src="videos/video2.mp4" type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+
+      <!-- Repite para video2…video6 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="video-card">
+          <div class="ratio ratio-16x9">
+            <video preload="metadata" controls playsinline class="w-100 h-100">
+              <source src="videos/video2.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
-      <!-- Video 3 -->
-      <div class="col-12 col-md-4">
-        <div class="ratio ratio-16x9 rounded shadow hover-scale overflow-hidden">
-          <video controls class="w-100 h-100">
-            <source src="videos/video3.mp4" type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="video-card">
+          <div class="ratio ratio-16x9">
+            <video preload="metadata" controls playsinline class="w-100 h-100">
+              <source src="videos/video3.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
-      <!-- Video 4 -->
-      <div class="col-12 col-md-4">
-        <div class="ratio ratio-16x9 rounded shadow hover-scale overflow-hidden">
-          <video controls class="w-100 h-100">
-            <source src="videos/video4.mp4" type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="video-card">
+          <div class="ratio ratio-16x9">
+            <video preload="metadata" controls playsinline class="w-100 h-100">
+              <source src="videos/video4.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
-      <!-- Video 5 -->
-      <div class="col-12 col-md-4">
-        <div class="ratio ratio-16x9 rounded shadow hover-scale overflow-hidden">
-          <video controls class="w-100 h-100">
-            <source src="videos/video5.mp4" type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="video-card">
+          <div class="ratio ratio-16x9">
+            <video preload="metadata" controls playsinline class="w-100 h-100">
+              <source src="videos/video5.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
-      <!-- Video 6 -->
-      <div class="col-12 col-md-4">
-        <div class="ratio ratio-16x9 rounded shadow hover-scale overflow-hidden">
-          <video controls class="w-100 h-100">
-            <source src="videos/video6.mp4" type="video/mp4" />
-            Tu navegador no soporta el elemento de video.
-          </video>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="video-card">
+          <div class="ratio ratio-16x9">
+            <video preload="metadata" controls playsinline class="w-100 h-100">
+              <source src="videos/video6.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </div>
+
     </div>
   </main>
 
@@ -96,8 +123,40 @@
     &copy; 2025 Barceló. Todos los derechos reservados.
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <!-- JS de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script para generar el poster automáticamente -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('video').forEach(video => {
+        // Si ya tiene poster, saltar
+        if (video.getAttribute('poster')) return;
+
+        // Sólo metadatos para obtener duración y dimensiones
+        video.preload = 'metadata';
+
+        // Cuando esté listo metadata, hacer seek a 0.1s
+        video.addEventListener('loadedmetadata', () => {
+          const captureTime = Math.min(0.1, video.duration / 2);
+          video.currentTime = captureTime;
+        }, { once: true });
+
+        // En cuanto llegue a ese tiempo, capturar frame y crear poster
+        video.addEventListener('seeked', () => {
+          const canvas = document.createElement('canvas');
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          const dataURL = canvas.toDataURL('image/jpeg');
+          video.setAttribute('poster', dataURL);
+          // reset al inicio
+          video.currentTime = 0;
+          video.pause();
+        }, { once: true });
+      });
+    });
+  </script>
 </body>
 </html>
