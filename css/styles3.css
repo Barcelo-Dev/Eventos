@@ -46,43 +46,39 @@ body {
 }
 
 /* ==============================
-   Main & Vídeo
+   Main & Vídeo (modificado)
    ============================== */
-/* main ocupa todo el espacio entre header y footer */
 main {
   display: flex;
   flex: 1 1 auto;
 }
-
-/* contenedor que rellena todo el main */
+/* Nuevo contenedor centrado */
 .video-container {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  /* opcional: padding para dejar espacio alrededor */
+  padding: 1rem;
   overflow: hidden;
 }
-
-/* video cubre todo el contenedor */
+/* Vídeo reducido y centrado */
 .video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* cubre sin deformar */
+  position: relative;            /* anula position:absolute previo */
+  width: 80%;                    /* 80% del ancho de la ventana */
+  height: auto;                  /* conserva proporción */
+  max-width: 80vw;               /* no exceder 80% del viewport width */
+  max-height: 80vh;              /* no exceder 80% del viewport height */
+  object-fit: contain;           /* muestra todo el fotograma */
 }
 
 /* ==============================
-   Títulos y Texto
+   Otros componentes (si los usas)
    ============================== */
 h1, h2.h3 {
   font-weight: 700;
   color: #fff;
 }
-
-/* ==============================
-   Nav-pills (si las usas) 
-   ============================== */
 .nav-pills .nav-link {
   font-weight: 500;
   color: #ddd;
@@ -93,10 +89,6 @@ h1, h2.h3 {
   color: #fff;
   background: var(--primary);
 }
-
-/* ==============================
-   Panorama (otro componente)
-   ============================== */
 .panorama {
   width: 100%;
   max-width: 800px;
@@ -107,10 +99,6 @@ h1, h2.h3 {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
-
-/* ==============================
-   Miniaturas
-   ============================== */
 .photo-thumb {
   cursor: pointer;
   transition: transform .3s ease, box-shadow .3s ease;
@@ -122,10 +110,6 @@ h1, h2.h3 {
   box-shadow: 0 0 10px rgba(0,0,0,0.7);
   border-color: var(--primary);
 }
-
-/* ==============================
-   Modal de foto
-   ============================== */
 .modal-content {
   background: transparent;
 }
@@ -133,10 +117,6 @@ h1, h2.h3 {
   width: 100%;
   border-radius: .5rem;
 }
-
-/* ==============================
-   Cards
-   ============================== */
 .card {
   background: rgba(255,255,255,0.1);
   border: none;
@@ -151,10 +131,6 @@ h1, h2.h3 {
   margin-top: .5rem;
   font-weight: 500;
 }
-
-/* ==============================
-   Hover scale (cards y video)
-   ============================== */
 .hover-scale {
   transition: transform .3s ease, box-shadow .3s ease;
 }
@@ -178,30 +154,19 @@ footer {
    Adaptación para móviles
    ============================== */
 @media (max-width: 768px) {
-  /* Centrar el vídeo en el eje vertical y horizontal */
   main {
     display: flex;           
     flex: 1 1 auto;          
     align-items: center;     
     justify-content: center; 
   }
-
-  /* Contenedor ratio fijo 16:9 */
   .video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 56.25%;    /* 9/16 = 0.5625 */
-    overflow: hidden;
-    margin: 0 auto;
+    padding: .5rem;
   }
-
   .video-container video {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;    /* vídeo completo sin cortes */
+    width: 90%;
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;    /* muestra todo el fotograma */
   }
 }
