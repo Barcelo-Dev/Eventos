@@ -18,11 +18,6 @@
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/styles3.css" />
   <link rel="icon" href="images/icono.png" type="image/png" />
- <!-- Favicons -->
-  <link rel="icon" href="images/icono.png" type="image/png" />
-  <link rel="icon" href="images/icono.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-  
 </head>
 <body>
 
@@ -36,7 +31,13 @@
   <!-- Sección de Videos ocupa TODO el espacio restante -->
   <main class="flex-grow-1 d-flex">
     <div class="video-container w-100">
-      <video controls>
+      <video
+        id="mainVideo"
+        autoplay
+        muted
+        playsinline
+        controls
+      >
         <source src="slides/presentacion.mp4" type="video/mp4" />
         Tu navegador no soporta el elemento de video.
       </video>
