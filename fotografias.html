@@ -3,33 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Galería – Barceló Eventos</title>
+  <title>Galería 360° – Barceló Eventos</title>
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- Bootstrap CSS v5 -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <!-- Pannellum CSS (360º) -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
-    rel="stylesheet"
-  />
-  <!-- Tus estilos personalizados -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Pannellum CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" rel="stylesheet" />
+  <!-- Estilos personalizados -->
   <link rel="stylesheet" href="css/styles2.css" />
-
-   <link rel="icon" href="images/icono.png" type="image/png" />
-   <link rel="icon" href="images/icono.ico" type="image/x-icon">
-   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
+  <link rel="icon" href="images/icono.png" type="image/png" />
+  <link rel="icon" href="images/icono.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
-<body class="d-flex flex-column min-vh-100 bg-dark text-white">
 
+<body class="d-flex flex-column min-vh-100 bg-dark text-white">
   <!-- Navbar -->
   <nav class="navbar navbar-light bg-light py-2 border-bottom">
     <div class="container">
@@ -38,125 +27,82 @@
   </nav>
 
   <main class="container py-5 flex-grow-1">
-    <h1 class="text-center mb-5">Galería</h1>
+    <h1 class="text-center mb-5">Galería 360°</h1>
 
     <!-- Pestañas -->
     <ul class="nav nav-pills justify-content-center mb-4" id="galleryTabs" role="tablist">
-      <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#room1">Habitación 1</button></li>
-      <li class="nav-item"><button class="nav-link"        data-bs-toggle="pill" data-bs-target="#room2">Habitación 2</button></li>
-      <li class="nav-item"><button class="nav-link"        data-bs-toggle="pill" data-bs-target="#room3">Habitación 3</button></li>
-      <li class="nav-item"><button class="nav-link"        data-bs-toggle="pill" data-bs-target="#club">Club Premium</button></li>
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#room1">Superior Ejecutiva</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#room2">Suite Duplex</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#room3">Superior con Terraza</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#club">Lounge Premium Level</button></li>
     </ul>
 
-    <!-- Contenedor único Pannellum -->
-    <div id="panoramaContainer" class="panorama mx-auto rounded shadow mb-4"></div>
+    <!-- Contenedor con flechas -->
+    <div class="d-flex justify-content-center align-items-center position-relative mb-4" style="max-width: 800px; margin: 0 auto;">
+      <button id="prev360" class="nav-360-btn d-none position-absolute start-0 top-50 translate-middle-y"><span>&larr;</span></button>
+      <div id="panoramaContainer" class="panorama mx-auto rounded shadow"></div>
+      <button id="next360" class="nav-360-btn d-none position-absolute end-0 top-50 translate-middle-y"><span>&rarr;</span></button>
+    </div>
 
-    <!-- Miniaturas -->
+    <!-- Contenido de pestañas -->
     <div class="tab-content">
       <!-- Habitación 1 -->
       <div class="tab-pane fade show active" id="room1">
         <div class="row g-3 justify-content-center mb-4">
           <div class="col-auto">
-            <img src="images/hab1.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/hab1.jpg"
-                 alt="Habitación 1 – Foto 1">
+            <img src="images/hab1.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/hab1.jpg" alt="Habitación 1 – Foto 1">
           </div>
         </div>
       </div>
+
       <!-- Habitación 2 -->
       <div class="tab-pane fade" id="room2">
         <div class="row g-3 justify-content-center mb-4">
           <div class="col-6 col-md-3">
-            <img src="images/hab2-1.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/hab2-1.jpg"
-                 alt="Habitación 2 – Foto 1">
+            <img src="images/hab2-1.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/hab2-1.jpg" alt="Habitación 2 – Foto 1">
           </div>
           <div class="col-6 col-md-3">
-            <img src="images/hab2-2.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/hab2-2.jpg"
-                 alt="Habitación 2 – Foto 2">
+            <img src="images/hab2-2.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/hab2-2.jpg" alt="Habitación 2 – Foto 2">
           </div>
           <div class="col-6 col-md-3">
-            <img src="images/hab2-3.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/hab2-3.jpg"
-                 alt="Habitación 2 – Foto 3">
+            <img src="images/hab2-3.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/hab2-3.jpg" alt="Habitación 2 – Foto 3">
           </div>
         </div>
       </div>
+
       <!-- Habitación 3 -->
       <div class="tab-pane fade" id="room3">
         <div class="row g-3 justify-content-center mb-4">
           <div class="col-6 col-md-3">
-            <img src="images/hab3.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/hab3.jpg"
-                 alt="Habitación 3 – Foto 1">
+            <img src="images/hab3.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/hab3.jpg" alt="Habitación 3 – Foto 1">
           </div>
           <div class="col-6 col-md-3">
-            <img src="images/hab3-1.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/hab3-1.jpg"
-                 alt="Habitación 3 – Foto 2">
+            <img src="images/hab3-1.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/hab3-1.jpg" alt="Habitación 3 – Foto 2">
           </div>
         </div>
       </div>
+
       <!-- Club Premium -->
       <div class="tab-pane fade" id="club">
         <div class="row g-3 justify-content-center mb-4">
           <div class="col-6 col-md-3">
-            <img src="images/club-1.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/club-1.jpg"
-                 alt="Club Premium – Foto 1">
+            <img src="images/club-1.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/club-1.jpg" alt="Club Premium – Foto 1">
           </div>
           <div class="col-6 col-md-3">
-            <img src="images/club-2.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/club-2.jpg"
-                 alt="Club Premium – Foto 2">
+            <img src="images/club-2.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/club-2.jpg" alt="Club Premium – Foto 2">
           </div>
           <div class="col-6 col-md-3">
-            <img src="images/club-3.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/club-3.jpg"
-                 alt="Club Premium – Foto 3">
+            <img src="images/club-3.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/club-3.jpg" alt="Club Premium – Foto 3">
           </div>
           <div class="col-6 col-md-3">
-            <img src="images/club-4.jpg"
-                 class="img-fluid rounded photo-thumb"
-                 data-bs-toggle="modal"
-                 data-bs-target="#photoModal"
-                 data-img="images/club-4.jpg"
-                 alt="Club Premium – Foto 4">
+            <img src="images/club-4.jpg" class="img-fluid rounded photo-thumb" data-bs-toggle="modal" data-bs-target="#photoModal" data-img="images/club-4.jpg" alt="Club Premium – Foto 4">
           </div>
         </div>
       </div>
     </div>
   </main>
 
-  <!-- Modal Lightbox de Fotos -->
+  <!-- Modal de imagen -->
   <div class="modal fade" id="photoModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-transparent border-0">
@@ -179,32 +125,66 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
   <script>
+    let viewer;
+    const galleryScenes = {
+      room1: ["room1"],
+      room2: ["room2", "room2extra"],
+      room3: ["room3"],
+      club:  ["club"]
+    };
+    let currentTab = "room1";
+    let currentSceneIndex = 0;
+
     document.addEventListener("DOMContentLoaded", () => {
-      // Crea un único viewer
-      const viewer = pannellum.viewer("panoramaContainer", {
+      viewer = pannellum.viewer("panoramaContainer", {
         default: {
-          firstScene:        "room1",
-          autoLoad:          true,
-          showZoomCtrl:      true,
-          showFullscreenCtrl:true
+          firstScene: "room1",
+          autoLoad: true,
+          showZoomCtrl: true,
+          showFullscreenCtrl: true
         },
         scenes: {
-          room1: { panorama: "images/hab1-360-low.jpg" },
-          room2: { panorama: "images/hab2-360-low.jpg" },
-          room3: { panorama: "images/hab3-360-low.jpg" },
-          club:  { panorama: "images/club-360-low.jpg" }
+          room1:       { panorama: "images/hab1-360-low.jpg" },
+          room2:       { panorama: "images/hab2-360-low.jpg" },
+          room2extra:  { panorama: "images/hab2-2-360-low.jpg", preview: "images/hab2-2-360.jpg" },
+          room3:       { panorama: "images/hab3-360-low.jpg" },
+          club:        { panorama: "images/club-360-low.jpg" }
         }
       });
 
-      // Al cambiar de pestaña, carga la escena
+      const prevBtn = document.getElementById("prev360");
+      const nextBtn = document.getElementById("next360");
+
       document.querySelectorAll("#galleryTabs button").forEach(btn => {
         btn.addEventListener("shown.bs.tab", e => {
-          const scene = e.target.getAttribute("data-bs-target").substring(1);
-          viewer.loadScene(scene);
+          currentTab = e.target.getAttribute("data-bs-target").substring(1);
+          currentSceneIndex = 0;
+          const scenes = galleryScenes[currentTab];
+          viewer.loadScene(scenes[currentSceneIndex]);
+
+          // Mostrar u ocultar flechas según cantidad de vistas
+          if (scenes.length > 1) {
+            prevBtn.classList.remove("d-none");
+            nextBtn.classList.remove("d-none");
+          } else {
+            prevBtn.classList.add("d-none");
+            nextBtn.classList.add("d-none");
+          }
         });
       });
 
-      // Lightbox de miniaturas
+      prevBtn.addEventListener("click", () => {
+        const scenes = galleryScenes[currentTab];
+        currentSceneIndex = (currentSceneIndex - 1 + scenes.length) % scenes.length;
+        viewer.loadScene(scenes[currentSceneIndex]);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        const scenes = galleryScenes[currentTab];
+        currentSceneIndex = (currentSceneIndex + 1) % scenes.length;
+        viewer.loadScene(scenes[currentSceneIndex]);
+      });
+
       document.querySelectorAll(".photo-thumb").forEach(img =>
         img.addEventListener("click", e =>
           document.getElementById("modalImage").src = e.currentTarget.dataset.img
