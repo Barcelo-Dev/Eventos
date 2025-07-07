@@ -31,17 +31,25 @@
 
     <!-- Pestañas -->
     <ul class="nav nav-pills justify-content-center mb-4" id="galleryTabs" role="tablist">
-      <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#room1">Superior Ejecutiva</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#room2">Suite Duplex</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#room3">Superior con Terraza</button></li>
-      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#club">Lounge Premium Level</button></li>
+      <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#room1">Habitación 1</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#room2">Habitación 2</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#room3">Habitación 3</button></li>
+      <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#club">Club Premium</button></li>
     </ul>
 
-    <!-- Contenedor con flechas -->
+    <!-- Contenedor con flechas SVG -->
     <div class="d-flex justify-content-center align-items-center position-relative mb-4" style="max-width: 800px; margin: 0 auto;">
-      <button id="prev360" class="nav-360-btn d-none position-absolute start-0 top-50 translate-middle-y"><span>&larr;</span></button>
+      <button id="prev360" class="nav-360-btn d-none position-absolute start-0 top-50 translate-middle-y" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+      </button>
       <div id="panoramaContainer" class="panorama mx-auto rounded shadow"></div>
-      <button id="next360" class="nav-360-btn d-none position-absolute end-0 top-50 translate-middle-y"><span>&rarr;</span></button>
+      <button id="next360" class="nav-360-btn d-none position-absolute end-0 top-50 translate-middle-y" aria-label="Siguiente">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 1 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </button>
     </div>
 
     <!-- Contenido de pestañas -->
@@ -102,7 +110,7 @@
     </div>
   </main>
 
-  <!-- Modal de imagen -->
+  <!-- Modal -->
   <div class="modal fade" id="photoModal" tabindex="-1">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content bg-transparent border-0">
@@ -162,7 +170,7 @@
           const scenes = galleryScenes[currentTab];
           viewer.loadScene(scenes[currentSceneIndex]);
 
-          // Mostrar u ocultar flechas según cantidad de vistas
+          // Mostrar/ocultar flechas según cantidad
           if (scenes.length > 1) {
             prevBtn.classList.remove("d-none");
             nextBtn.classList.remove("d-none");
